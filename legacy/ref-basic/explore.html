@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7a1024">
+  <meta name="description" content="Browse Kolkata's pandals by vibe, with crowd estimates and neighbourhood guides.">
+  <title>Explore Pandals — PandalPass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="explore">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html" aria-label="PandalPass home">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span class="brand__name">PandalPass</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html" aria-current="page">Explore</a>
+        <a href="food.html">Food</a>
+        <a href="route.html">Route</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn--gold btn--sm" href="planner.html">Plan my Pujo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="shell">
+      <div class="page-head">
+        <p class="eyebrow">Pandal directory</p>
+        <h1>Explore pandals</h1>
+        <p id="count">26 pandals across Kolkata</p>
+      </div>
+
+      <div class="filters" id="filters" role="tablist" aria-label="Filter pandals by vibe"></div>
+      <p class="note">Crowd levels are planning estimates, not live data.</p>
+      <div class="card-grid" id="list"></div>
+
+      <div class="page-cta">
+        <a class="btn btn--wine" href="planner.html">Plan my Pujo</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div>
+        <a class="brand brand--light" href="index.html" aria-label="PandalPass home">
+          <span class="brand__mark" aria-hidden="true">✦</span>
+          <span class="brand__name">PandalPass</span>
+        </a>
+        <p>A planning companion for Kolkata's Durga Pujo. Crowd, time and cost are estimates, not live data.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore pandals</a>
+        <a href="food.html">Food stops</a>
+        <a href="route.html">Route map</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+    </div>
+    <div class="shell site-footer__bottom">
+      <span>PandalPass · a Pujo planning project</span>
+      <span>Built for the city that never sleeps during Pujo.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7a1024">
+  <meta name="description" content="PandalPass is a personalised Durga Pujo route planner for Kolkata. Build a pandal-hopping night that fits your time, taste and travel style.">
+  <title>PandalPass — Plan your Pujo night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html" aria-label="PandalPass home">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span class="brand__name">PandalPass</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore</a>
+        <a href="food.html">Food</a>
+        <a href="route.html">Route</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn--gold btn--sm" href="planner.html">Plan my Pujo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero-home">
+      <div class="shell hero-home__grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Kolkata · Durga Pujo planner</p>
+          <h1>Your Pujo night,<br><em>perfectly plotted.</em></h1>
+          <p class="lead">Tell us where you're starting and how you like to roam. PandalPass stitches the pandals, food stops and travel legs into one easy night out.</p>
+          <div class="hero-copy__actions">
+            <a class="btn btn--wine" href="planner.html">Build my route</a>
+            <a class="btn btn--ghost-light" href="explore.html">Explore pandals</a>
+          </div>
+          <p class="note">Crowd, time and cost are planning estimates — not live data.</p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual__glow" aria-hidden="true"></div>
+          <div class="route-preview">
+            <div class="route-preview__head">
+              <span class="chip">Tonight's route</span>
+              <span>4 stops · 6 hours</span>
+            </div>
+            <ol class="route-preview__list">
+              <li><span class="route-preview__dot"></span><div><strong>Start · Barasat</strong><small>6:30 PM · meeting point</small></div></li>
+              <li><span class="route-preview__dot"></span><div><strong>Tala Park Pratyay</strong><small>Contemporary art theme</small></div></li>
+              <li><span class="route-preview__dot route-preview__dot--gold"></span><div><strong>Pujo Bhog Stall</strong><small>Khichuri · labra · payesh</small></div></li>
+              <li><span class="route-preview__dot"></span><div><strong>Kumartuli Park</strong><small>Artisan roots · classic</small></div></li>
+            </ol>
+            <div class="route-preview__foot">
+              <span>5h 25m</span>
+              <span>0.9 km walk</span>
+              <span>₹190</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shell hero-stats">
+        <div class="stat">
+          <span class="stat__num" id="stat-pandals">26</span>
+          <span class="stat__label">Pandals</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" id="stat-starts">12</span>
+          <span class="stat__label">Start points</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" id="stat-foods">8</span>
+          <span class="stat__label">Food stops</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Durga Pujo 2026</span><span>✦</span><span>26 pandals</span><span>✦</span><span>12 start points</span><span>✦</span><span>8 food stops</span><span>✦</span>
+        <span>Durga Pujo 2026</span><span>✦</span><span>26 pandals</span><span>✦</span><span>12 start points</span><span>✦</span><span>8 food stops</span><span>✦</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>Three calm steps to a big Pujo night.</h2>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-card__num">01</span>
+            <h3>Set your start</h3>
+            <p>Pick a launch point — from Barasat to Behala — and tell us how long you have.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-card__num">02</span>
+            <h3>Pick your vibe</h3>
+            <p>Iconic, Instagram-ready, low-crowd, family friendly or full of energy. Mix and match.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-card__num">03</span>
+            <h3>Follow the pass</h3>
+            <p>Get a timed route with travel legs, wait times and a food stop in the right place.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="shell">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="eyebrow">Pandal radar</p>
+            <h2>Tonight's picks</h2>
+          </div>
+          <a class="link-arrow" href="explore.html">See all 26 pandals <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="card-grid card-grid--picks" id="home-picks"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell food-teaser">
+        <div>
+          <p class="eyebrow">Fuel the crawl</p>
+          <h2>Food stops between the lights.</h2>
+          <p>Bhog, phuchka, rolls, mishti and late-night cha — tucked into your route so nobody gets hangry.</p>
+          <a class="btn btn--ghost" href="food.html">Browse food stops</a>
+        </div>
+        <div class="food-teaser__list" id="home-foods"></div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="shell cta-band__inner">
+        <div>
+          <p class="eyebrow">Ready when you are</p>
+          <h2>Let's map your Pujo night.</h2>
+        </div>
+        <a class="btn btn--gold" href="planner.html">Start planning</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div>
+        <a class="brand brand--light" href="index.html" aria-label="PandalPass home">
+          <span class="brand__mark" aria-hidden="true">✦</span>
+          <span class="brand__name">PandalPass</span>
+        </a>
+        <p>A planning companion for Kolkata's Durga Pujo. Crowd, time and cost are estimates, not live data.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore pandals</a>
+        <a href="food.html">Food stops</a>
+        <a href="route.html">Route map</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+    </div>
+    <div class="shell site-footer__bottom">
+      <span>PandalPass · a Pujo planning project</span>
+      <span>Built for the city that never sleeps during Pujo.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

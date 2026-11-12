@@ -1,0 +1,82 @@
+-- PandalPass PostgreSQL schema reference (managed via Drizzle ORM in src/db/schema.ts).
+
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
+  uid TEXT NOT NULL UNIQUE,
+  email TEXT NOT NULL,
+  display_name TEXT,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS user_passes (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER NOT NULL UNIQUE REFERENCES users(id) ON DELETE CASCADE,
+  prefs JSONB NOT NULL,
+  pass JSONB NOT NULL,
+  updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS pandals (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  area TEXT NOT NULL,
+  tagline TEXT NOT NULL,
+  crowd TEXT NOT NULL,
+  x INTEGER NOT NULL,
+  y INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS pandal_tags (
+  pandal_id INTEGER NOT NULL REFERENCES pandals(id) ON DELETE CASCADE,
+  tag TEXT NOT NULL,
+  position INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (pandal_id, tag)
+);
+
+CREATE TABLE IF NOT EXISTS starts (
+  name TEXT PRIMARY KEY,
+  x INTEGER NOT NULL,
+  y INTEGER NOT NULL,
+  position INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS foods (
+  id TEXT PRIMARY KEY,
+  icon TEXT NOT NULL,
+  name TEXT NOT NULL,
+  kind TEXT NOT NULL,
+  area TEXT NOT NULL,
+  price INTEGER NOT NULL,
+  position INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS vibes (
+  id TEXT PRIMARY KEY,
+  icon TEXT NOT NULL,
+  label TEXT NOT NULL,
+  position INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS time_options (
+  hours INTEGER PRIMARY KEY,
+  count INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS travel_modes (
+  id TEXT PRIMARY KEY,
+  icon TEXT NOT NULL,
+  label TEXT NOT NULL,
+  position INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS map_areas (
+  label TEXT PRIMARY KEY,
+  x INTEGER NOT NULL,
+  y INTEGER NOT NULL,
+  position INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS settings (
+  name TEXT PRIMARY KEY,
+  value JSONB NOT NULL
+);

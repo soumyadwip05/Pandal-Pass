@@ -1,0 +1,24 @@
+/* ==========================================================
+   PandalPass — food page
+   ========================================================== */
+
+body[data-page="food"] .page-head { margin-bottom: 20px; }
+body[data-page="food"] .page-head + .note { margin: 0 0 24px; }
+
+.card-grid--food { gap: 20px; }
+
+body[data-page="food"] .fcard {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+body[data-page="food"] .fcard:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+body[data-page="food"] .fcard:nth-child(4n+1) .fcard__icon { background: var(--gold); }
+body[data-page="food"] .fcard:nth-child(4n+2) .fcard__icon { background: var(--pink); }
+body[data-page="food"] .fcard:nth-child(4n+3) .fcard__icon { background: var(--lime); }
+body[data-page="food"] .fcard:nth-child(4n+4) .fcard__icon { background: var(--orange); }
+
+@media (max-width: 760px) {
+  .card-grid--food { gap: 16px; }
+}

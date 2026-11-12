@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7a1024">
+  <meta name="description" content="See your Pujo route on a stylised Kolkata map with numbered stops, crowd estimates and metro lines.">
+  <title>Route Map — PandalPass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="route">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html" aria-label="PandalPass home">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span class="brand__name">PandalPass</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore</a>
+        <a href="food.html">Food</a>
+        <a href="route.html" aria-current="page">Route</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn--gold btn--sm" href="planner.html">Plan my Pujo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="shell">
+      <div class="page-head">
+        <p class="eyebrow">Route map</p>
+        <h1>Your night, on the map</h1>
+        <p id="route-summary"></p>
+      </div>
+
+      <div class="route-layout">
+        <section class="map-card" aria-label="Stylised Kolkata Pujo route map">
+          <svg class="map" viewBox="0 0 760 520" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Stylised map of Kolkata with your pandal route">
+            <rect class="map__block" x="40" y="20" width="120" height="90" rx="6"/>
+            <rect class="map__block" x="500" y="20" width="110" height="70" rx="6"/>
+            <rect class="map__block" x="40" y="150" width="110" height="70" rx="6"/>
+            <rect class="map__block" x="40" y="380" width="150" height="100" rx="6"/>
+            <rect class="map__block" x="600" y="230" width="110" height="60" rx="6"/>
+            <rect class="map__park" x="140" y="235" width="150" height="110" rx="10"/>
+            <rect class="map__park" x="510" y="390" width="95" height="40" rx="10"/>
+            <ellipse class="map__water" cx="530" cy="445" rx="72" ry="28"/>
+
+            <path class="map__road" d="M80 0 V520"/>
+            <path class="map__road" d="M310 0 V520"/>
+            <path class="map__road" d="M540 0 V520"/>
+            <path class="map__road" d="M690 0 V520"/>
+            <path class="map__road" d="M0 130 H760"/>
+            <path class="map__road" d="M0 250 H760"/>
+            <path class="map__road" d="M0 360 H760"/>
+            <path class="map__road--minor map__road" d="M0 60 L760 90"/>
+            <path class="map__road--minor map__road" d="M0 300 H760"/>
+            <path class="map__road--minor map__road" d="M0 420 H760"/>
+
+            <text class="map__area" x="580" y="14">Lake Town</text>
+            <text class="map__area" x="450" y="150">Shyambazar</text>
+            <text class="map__area" x="200" y="180">College St</text>
+            <text class="map__area" x="510" y="245">Sealdah</text>
+            <text class="map__area" x="156" y="230">Esplanade</text>
+            <text class="map__area" x="164" y="300">Maidan</text>
+            <text class="map__area" x="16" y="328">New Alipore</text>
+            <text class="map__area" x="600" y="318">Gariahat</text>
+            <text class="map__area" x="220" y="405">Chetla</text>
+            <text class="map__area" x="240" y="470">Tollygunge</text>
+            <text class="map__area" x="600" y="500">Naktala</text>
+
+            <path class="map__metro map__metro--blue" d="M310 20 V510"/>
+            <path class="map__metro map__metro--green" d="M0 250 H760"/>
+            <circle class="map__station map__station--blue" cx="310" cy="130" r="6"/>
+            <circle class="map__station map__station--blue" cx="310" cy="350" r="6"/>
+            <circle class="map__station map__station--blue" cx="310" cy="470" r="6"/>
+            <circle class="map__station map__station--green" cx="120" cy="250" r="6"/>
+            <circle class="map__station map__station--green" cx="430" cy="250" r="6"/>
+            <circle class="map__station map__station--green" cx="660" cy="250" r="6"/>
+
+            <g id="layer-route"></g>
+            <g id="layer-markers"></g>
+          </svg>
+
+          <div class="legend" aria-label="Map legend">
+            <div class="legend__title">Estimated crowd</div>
+            <div class="legend__row"><span class="legend__dot legend__dot--low"></span>Low</div>
+            <div class="legend__row"><span class="legend__dot legend__dot--moderate"></span>Moderate</div>
+            <div class="legend__row"><span class="legend__dot legend__dot--heavy"></span>Heavy</div>
+            <hr>
+            <div class="legend__title">Metro</div>
+            <div class="legend__row"><span class="legend__line legend__line--blue"></span>Blue Line</div>
+            <div class="legend__row"><span class="legend__line legend__line--green"></span>Green Line</div>
+          </div>
+          <button class="map-btn" id="locate-btn" type="button" aria-label="Centre on your start point">◎</button>
+        </section>
+
+        <aside class="route-aside">
+          <section class="panel stop-detail" aria-live="polite">
+            <p class="eyebrow">Selected stop</p>
+            <h2 class="panel__title" id="stop-name">Tap a marker</h2>
+            <p class="muted" id="stop-area">Every stop on the map has a story.</p>
+            <p class="note" id="stop-tag">Choose any numbered marker to see its area, theme and crowd estimate.</p>
+            <div class="stop-detail__row">
+              <span id="stop-crowd"></span>
+              <span class="stop-detail__order" id="stop-order"></span>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h3 class="panel__title">Your stops</h3>
+            <ol class="route-list" id="route-list"></ol>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div>
+        <a class="brand brand--light" href="index.html" aria-label="PandalPass home">
+          <span class="brand__mark" aria-hidden="true">✦</span>
+          <span class="brand__name">PandalPass</span>
+        </a>
+        <p>A planning companion for Kolkata's Durga Pujo. Crowd, time and cost are estimates, not live data.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore pandals</a>
+        <a href="food.html">Food stops</a>
+        <a href="route.html">Route map</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+    </div>
+    <div class="shell site-footer__bottom">
+      <span>PandalPass · a Pujo planning project</span>
+      <span>Built for the city that never sleeps during Pujo.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

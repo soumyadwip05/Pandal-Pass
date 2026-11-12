@@ -1,0 +1,173 @@
+/* ==========================================================
+   PandalPass — route map page
+   ========================================================== */
+
+.route-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.8fr);
+  gap: clamp(24px, 3vw, 40px);
+  align-items: start;
+}
+
+.map-card {
+  position: relative;
+  overflow: hidden;
+  height: clamp(460px, 64vh, 640px);
+  border: 4px solid var(--ink);
+  border-radius: 0;
+  background: #ebd6a2;
+  box-shadow: var(--shadow-lg);
+}
+.map { width: 100%; height: 100%; }
+
+.map__block { fill: #f7e8bf; stroke: var(--ink); stroke-width: 2; rx: 0; ry: 0; }
+.map__park { fill: var(--lime); stroke: var(--ink); stroke-width: 3; rx: 0; ry: 0; }
+.map__water { fill: var(--blue); opacity: 0.28; stroke: var(--ink); stroke-width: 3; }
+.map__road { fill: none; stroke: #fffdf5; stroke-width: 14; stroke-linecap: square; }
+.map__road--minor { stroke-width: 7; stroke: #f6e9c8; }
+.map__area {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--ink);
+  opacity: 0.6;
+}
+.map__metro { fill: none; stroke-width: 5; }
+.map__metro--blue { stroke: var(--metro-blue); stroke-dasharray: 12 7; }
+.map__metro--green { stroke: var(--metro-green); stroke-dasharray: 16 9; }
+.map__station { fill: var(--white); stroke-width: 3; }
+.map__station--blue { stroke: var(--metro-blue); }
+.map__station--green { stroke: var(--metro-green); }
+.map__route {
+  fill: none;
+  stroke: var(--maroon);
+  stroke-width: 8;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.marker { cursor: pointer; outline: none; }
+.marker__bubble { fill: var(--paper); stroke: var(--ink); stroke-width: 2.5; }
+.marker__glyph { font-size: 13px; text-anchor: middle; dominant-baseline: central; }
+.marker__label {
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--paper-3);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.marker__dot--low { fill: var(--crowd-low); stroke: var(--ink); stroke-width: 1.5; }
+.marker__dot--moderate { fill: var(--crowd-mod); stroke: var(--ink); stroke-width: 1.5; }
+.marker__dot--heavy { fill: var(--crowd-heavy); stroke: var(--ink); stroke-width: 1.5; }
+.marker.is-route .marker__bubble { fill: var(--gold); stroke-width: 3; }
+.marker.is-active .marker__bubble { fill: var(--pink); stroke-width: 4; }
+.marker__num { font-family: var(--font-sans); font-size: 12px; font-weight: 700; fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+.marker.is-dim { opacity: 0.55; }
+.marker:focus-visible .marker__bubble { stroke: var(--blue); stroke-width: 5; }
+.marker.is-located .marker__bubble { animation: markerPulse 1.3s ease; transform-box: fill-box; transform-origin: center; }
+@keyframes markerPulse { 0%, 100% { transform: scale(1); } 45% { transform: scale(1.4); } }
+
+.legend {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 12px 14px;
+  border: 3px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper-3);
+  font-size: 12px;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.legend__title { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+.legend__row { display: flex; align-items: center; gap: 8px; margin-top: 6px; font-weight: 600; }
+.legend__dot { width: 12px; height: 12px; border: 2px solid var(--ink); border-radius: 0; }
+.legend__dot--low { background: var(--crowd-low); }
+.legend__dot--moderate { background: var(--crowd-mod); }
+.legend__dot--heavy { background: var(--crowd-heavy); }
+.legend__line { width: 20px; height: 4px; border: 1px solid var(--ink); }
+.legend__line--blue { background: var(--metro-blue); }
+.legend__line--green { background: var(--metro-green); }
+.legend hr { margin: 10px 0 8px; border: 0; border-top: 2px solid var(--ink); }
+
+.map-btn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--ink);
+  border-radius: 0;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 22px;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.map-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+
+.route-aside { display: grid; gap: 24px; }
+.stop-detail__row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
+.stop-detail__order {
+  padding: 4px 8px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  font-size: 11px;
+  font-weight: 700;
+}
+.stop-detail__order:empty { display: none; }
+.route-list { display: grid; gap: 6px; margin-top: 16px; }
+.route-list button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 9px 10px;
+  border: 2px solid transparent;
+  border-radius: 0;
+  text-align: left;
+}
+.route-list button:hover { border-color: var(--ink); background: var(--paper-2); }
+.route-list button.is-active { border-color: var(--ink); background: var(--gold); box-shadow: 3px 3px 0 var(--ink); }
+.route-list__num {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border: 2px solid var(--ink);
+  background: var(--maroon-2);
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 700;
+}
+.route-list button.is-active .route-list__num { background: var(--ink); color: var(--gold); }
+.route-list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+.route-list small { display: block; margin-top: 2px; font-size: 11.5px; color: var(--ink-soft); }
+
+@media (max-width: 1020px) {
+  .route-layout { grid-template-columns: 1fr; }
+  .map-card { height: clamp(420px, 58vw, 560px); }
+  .route-aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .map-card { height: 420px; }
+  .route-aside { grid-template-columns: 1fr; }
+  .legend { left: 10px; top: 10px; padding: 9px 11px; font-size: 11px; }
+  .map-btn { right: 10px; bottom: 10px; width: 42px; height: 42px; }
+}

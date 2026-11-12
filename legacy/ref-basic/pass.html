@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7a1024">
+  <meta name="description" content="Your generated Pujo Pass: a timed pandal-hopping itinerary with travel legs, food stop and night summary.">
+  <title>Your Pujo Pass — PandalPass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="pass">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html" aria-label="PandalPass home">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span class="brand__name">PandalPass</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore</a>
+        <a href="food.html">Food</a>
+        <a href="route.html">Route</a>
+        <a href="pass.html" aria-current="page">My Pass</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn--gold btn--sm" href="planner.html">Plan my Pujo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="pass-band">
+      <div class="shell">
+        <div class="pass-band__top">
+          <div>
+            <p class="eyebrow">Your Pujo Pass</p>
+            <h1>One night. One route.</h1>
+            <p class="pass-band__line" id="pass-line"></p>
+          </div>
+          <div class="pass-band__actions">
+            <a class="btn btn--gold" href="route.html">View route</a>
+            <a class="btn btn--ghost-light" href="planner.html">Edit plan</a>
+            <button class="btn btn--ghost-light" id="share-btn" type="button">Share</button>
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><div class="metric__value" id="m-total"></div><div class="metric__label">Total time</div></div>
+          <div class="metric"><div class="metric__value" id="m-walk"></div><div class="metric__label">Walking</div></div>
+          <div class="metric"><div class="metric__value" id="m-cost"></div><div class="metric__label">Per person</div></div>
+        </div>
+        <p class="pass-band__note">Planning estimates — not live data.</p>
+      </div>
+    </section>
+
+    <div class="shell page-grid">
+      <section class="panel" aria-label="Tonight's timeline">
+        <h2 class="panel__title">Tonight's timeline</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+
+      <aside class="pass-aside">
+        <section class="panel summary" aria-label="Night summary">
+          <p class="eyebrow">Night summary</p>
+          <h2>Pujo night complete.</h2>
+          <div class="summary__grid">
+            <div class="summary__cell"><div class="summary__num" id="s-pandals"></div><div class="summary__lbl">Pandals</div></div>
+            <div class="summary__cell"><div class="summary__num" id="s-food"></div><div class="summary__lbl">Food stops</div></div>
+            <div class="summary__cell"><div class="summary__num" id="s-walk"></div><div class="summary__lbl">Walked</div></div>
+            <div class="summary__cell"><div class="summary__num" id="s-time"></div><div class="summary__lbl">On the move</div></div>
+          </div>
+          <div class="pills">
+            <span class="pill" id="s-crowd"></span>
+            <span class="pill">Metro friendly</span>
+            <span class="pill" id="s-food-pill">Food included</span>
+          </div>
+          <p class="summary__outro">Until next Pujo.</p>
+        </section>
+
+        <section class="panel">
+          <h3 class="panel__title">Route at a glance</h3>
+          <p class="note">Open the map to see every stop in order, check crowd estimates and pick a different pandal.</p>
+          <a class="btn btn--wine" href="route.html">Open route map</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div>
+        <a class="brand brand--light" href="index.html" aria-label="PandalPass home">
+          <span class="brand__mark" aria-hidden="true">✦</span>
+          <span class="brand__name">PandalPass</span>
+        </a>
+        <p>A planning companion for Kolkata's Durga Pujo. Crowd, time and cost are estimates, not live data.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore pandals</a>
+        <a href="food.html">Food stops</a>
+        <a href="route.html">Route map</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+    </div>
+    <div class="shell site-footer__bottom">
+      <span>PandalPass · a Pujo planning project</span>
+      <span>Built for the city that never sleeps during Pujo.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

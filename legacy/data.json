@@ -1,0 +1,141 @@
+{
+  "site": {
+    "name": "PandalPass",
+    "festival": "Durga Pujo 2026",
+    "planningNote": "Crowd, time and cost are planning estimates, not live data.",
+    "storage": {
+      "prefs": "pandalpass.prefs",
+      "pass": "pandalpass.pass"
+    }
+  },
+  "defaultPrefs": {
+    "start": "Barasat",
+    "vibes": ["iconic", "insta", "quiet"],
+    "hours": 6,
+    "mode": "auto_metro",
+    "food": true
+  },
+  "home": {
+    "pickIds": [9, 6, 17, 23],
+    "foodCount": 3
+  },
+  "pandalGlyphs": ["landmark", "flame", "flower", "palette", "sparkles"],
+  "crowdLabels": {
+    "low": "Low",
+    "moderate": "Moderate",
+    "heavy": "Heavy"
+  },
+  "tagLabels": {
+    "iconic": "Iconic",
+    "insta": "Instagram",
+    "quiet": "Low crowd",
+    "family": "Family",
+    "energy": "High energy"
+  },
+  "pandals": [
+    { "id": 1, "name": "Tala Park Pratyay", "area": "Tala", "tagline": "Contemporary art theme", "tags": ["insta", "iconic"], "crowd": "moderate", "x": 175, "y": 38 },
+    { "id": 2, "name": "Kumartuli Park", "area": "Kumartuli", "tagline": "Artisan roots and classic craft", "tags": ["iconic", "family"], "crowd": "moderate", "x": 190, "y": 78 },
+    { "id": 3, "name": "Ahiritola Sarbojanin", "area": "Ahiritola", "tagline": "Riverside classic", "tags": ["family", "quiet"], "crowd": "moderate", "x": 165, "y": 102 },
+    { "id": 4, "name": "Hatibagan Nabin Pally", "area": "Hatibagan", "tagline": "Heritage lanes", "tags": ["iconic", "energy"], "crowd": "heavy", "x": 220, "y": 128 },
+    { "id": 5, "name": "Manicktala Chaltabagan", "area": "Manicktala", "tagline": "Folk craft showcase", "tags": ["family", "insta"], "crowd": "heavy", "x": 240, "y": 165 },
+    { "id": 6, "name": "College Square", "area": "College Street", "tagline": "Bookish and classic", "tags": ["iconic", "family"], "crowd": "heavy", "x": 170, "y": 178 },
+    { "id": 7, "name": "Santosh Mitra Sangha", "area": "Wellington", "tagline": "Grand-scale spectacle", "tags": ["iconic", "insta", "energy"], "crowd": "heavy", "x": 205, "y": 215 },
+    { "id": 8, "name": "Mohammad Ali Park", "area": "Central Kolkata", "tagline": "Traditional ritual", "tags": ["iconic", "family"], "crowd": "heavy", "x": 190, "y": 238 },
+    { "id": 9, "name": "Sreebhumi Sporting", "area": "Lake Town", "tagline": "Themed marvel", "tags": ["iconic", "insta", "energy"], "crowd": "heavy", "x": 320, "y": 95 },
+    { "id": 10, "name": "Baguiati Welfare", "area": "Baguiati", "tagline": "Neighbourhood warmth", "tags": ["family", "quiet"], "crowd": "low", "x": 312, "y": 150 },
+    { "id": 11, "name": "Salt Lake FD Block", "area": "Salt Lake", "tagline": "Light installations", "tags": ["insta", "energy"], "crowd": "moderate", "x": 290, "y": 195 },
+    { "id": 12, "name": "Suruchi Sangha", "area": "New Alipore", "tagline": "Elegant minimalism", "tags": ["quiet", "insta"], "crowd": "moderate", "x": 90, "y": 330 },
+    { "id": 13, "name": "Behala Club", "area": "Behala", "tagline": "Community favourite", "tags": ["family", "quiet"], "crowd": "low", "x": 110, "y": 440 },
+    { "id": 14, "name": "Tollygunge Agrani", "area": "Tollygunge", "tagline": "Retro lanes", "tags": ["quiet", "family"], "crowd": "low", "x": 150, "y": 455 },
+    { "id": 15, "name": "Ballygunge Cultural", "area": "Ballygunge", "tagline": "Elegant and traditional", "tags": ["iconic", "family"], "crowd": "moderate", "x": 225, "y": 340 },
+    { "id": 16, "name": "Singhi Park", "area": "Ballygunge", "tagline": "Crowd-favourite theme", "tags": ["iconic", "insta", "energy"], "crowd": "heavy", "x": 300, "y": 332 },
+    { "id": 17, "name": "Deshapriya Park", "area": "Ballygunge", "tagline": "Massive scale", "tags": ["iconic", "energy"], "crowd": "heavy", "x": 262, "y": 352 },
+    { "id": 18, "name": "Maddox Square", "area": "Ballygunge", "tagline": "Neighbourhood classic", "tags": ["family", "quiet"], "crowd": "moderate", "x": 247, "y": 372 },
+    { "id": 19, "name": "Badamtala Ashar Sangha", "area": "Kalighat", "tagline": "Award-winning themes", "tags": ["iconic", "insta"], "crowd": "moderate", "x": 205, "y": 385 },
+    { "id": 20, "name": "Chetla Agrani", "area": "Chetla", "tagline": "Riverside ritual", "tags": ["quiet", "family"], "crowd": "low", "x": 190, "y": 405 },
+    { "id": 21, "name": "Jodhpur Park", "area": "Jodhpur Park", "tagline": "Theme wizardry", "tags": ["insta", "iconic"], "crowd": "heavy", "x": 262, "y": 425 },
+    { "id": 22, "name": "Babubagan Sarbojanin", "area": "Dhakuria", "tagline": "Lakeside glow", "tags": ["insta", "quiet"], "crowd": "moderate", "x": 285, "y": 445 },
+    { "id": 23, "name": "Naktala Udayan", "area": "Naktala", "tagline": "Lively dhaak and dance", "tags": ["energy", "family"], "crowd": "moderate", "x": 285, "y": 482 },
+    { "id": 24, "name": "Hindustan Club", "area": "Gariahat", "tagline": "Crowd-puller", "tags": ["energy", "iconic"], "crowd": "heavy", "x": 308, "y": 300 },
+    { "id": 25, "name": "Park Circus Sarbojanin", "area": "Park Circus", "tagline": "Cultural melange", "tags": ["family", "energy"], "crowd": "moderate", "x": 262, "y": 262 },
+    { "id": 26, "name": "Dum Dum Park Tarun Sangha", "area": "Dum Dum", "tagline": "Folk-art theme", "tags": ["energy", "family"], "crowd": "moderate", "x": 262, "y": 55 }
+  ],
+  "starts": [
+    { "name": "Barasat", "x": 235, "y": 12 },
+    { "name": "Salt Lake", "x": 300, "y": 175 },
+    { "name": "Sector V", "x": 335, "y": 205 },
+    { "name": "New Town", "x": 340, "y": 120 },
+    { "name": "Dum Dum", "x": 270, "y": 70 },
+    { "name": "Shyambazar", "x": 200, "y": 105 },
+    { "name": "Esplanade", "x": 205, "y": 250 },
+    { "name": "Howrah", "x": 120, "y": 190 },
+    { "name": "Park Circus", "x": 255, "y": 275 },
+    { "name": "Garia", "x": 235, "y": 505 },
+    { "name": "Tollygunge", "x": 185, "y": 470 },
+    { "name": "Behala", "x": 95, "y": 470 }
+  ],
+  "foods": [
+    { "id": "pujo-bhog", "icon": "cookingPot", "name": "Pujo Bhog Stall", "kind": "Khichuri, labra, payesh", "area": "Kumartuli", "price": 180 },
+    { "id": "phuchka-chaat", "icon": "soup", "name": "Phuchka & Chaat Lane", "kind": "Street snacks", "area": "College Street", "price": 90 },
+    { "id": "kathi-roll", "icon": "sandwich", "name": "Kathi Roll Corner", "kind": "Egg and chicken rolls", "area": "Park Circus", "price": 140 },
+    { "id": "bengali-thali", "icon": "fish", "name": "Bengali Thali House", "kind": "Fish curry, rice, mishti", "area": "Ballygunge", "price": 320 },
+    { "id": "mughlai-parantha", "icon": "cookingPot", "name": "Mughlai Parantha Dhaba", "kind": "Late-night classic", "area": "Esplanade", "price": 200 },
+    { "id": "mishti-mandir", "icon": "cakeSlice", "name": "Mishti Mandir", "kind": "Sandesh, rosogolla, mishti doi", "area": "Gariahat", "price": 120 },
+    { "id": "tangra-bites", "icon": "utensils", "name": "Chinese Tangra Bites", "kind": "Chowmein, chilli chicken", "area": "Tollygunge", "price": 220 },
+    { "id": "cha-cutlet", "icon": "coffee", "name": "Cha & Cutlet Adda", "kind": "Kolkata cutlet and cha", "area": "Salt Lake", "price": 100 }
+  ],
+  "vibes": [
+    { "id": "iconic", "icon": "star", "label": "Iconic pandals" },
+    { "id": "insta", "icon": "camera", "label": "Instagram-worthy" },
+    { "id": "quiet", "icon": "leaf", "label": "Less crowded" },
+    { "id": "family", "icon": "users", "label": "Family friendly" },
+    { "id": "energy", "icon": "zap", "label": "High-energy" }
+  ],
+  "times": [
+    { "hours": 4, "count": 3 },
+    { "hours": 6, "count": 4 },
+    { "hours": 8, "count": 5 }
+  ],
+  "modes": [
+    { "id": "metro", "icon": "train", "label": "Metro preferred" },
+    { "id": "auto_metro", "icon": "bus", "label": "Auto + Metro" },
+    { "id": "walk", "icon": "footprints", "label": "More walking" },
+    { "id": "cab", "icon": "car", "label": "Cab friendly" }
+  ],
+  "engine": {
+    "distanceScale": 0.05,
+    "startClock": 1110,
+    "stayBase": 24,
+    "stayStep": 2,
+    "waitStep": 2,
+    "minLegMins": 5,
+    "foodOffset": 2,
+    "foodWalkMins": 8,
+    "foodWalkKm": 0.6,
+    "foodStayMins": 45,
+    "crowdBase": {
+      "low": 8,
+      "moderate": 20,
+      "heavy": 38
+    },
+    "travel": {
+      "cab": { "label": "Cab", "icon": "cab", "baseMins": 6, "minsPerKm": 3, "baseCost": 60, "costPerKm": 18 },
+      "walk": { "label": "Walk", "icon": "walk", "maxKm": 1.5, "minsPerKm": 13, "cost": 0 },
+      "auto": { "label": "Auto", "icon": "auto", "maxKm": 4, "baseMins": 6, "minsPerKm": 3.2, "baseCost": 30, "costPerKm": 10 },
+      "metro": { "label": "Metro + walk", "icon": "metro", "baseMins": 10, "minsPerKm": 3, "walkKm": 0.3, "cost": 20 }
+    }
+  },
+  "mapAreas": [
+    { "label": "Lake Town", "x": 580, "y": 14 },
+    { "label": "Shyambazar", "x": 450, "y": 150 },
+    { "label": "College St", "x": 200, "y": 180 },
+    { "label": "Sealdah", "x": 510, "y": 245 },
+    { "label": "Esplanade", "x": 156, "y": 230 },
+    { "label": "Maidan", "x": 164, "y": 300 },
+    { "label": "New Alipore", "x": 16, "y": 328 },
+    { "label": "Gariahat", "x": 600, "y": 318 },
+    { "label": "Chetla", "x": 220, "y": 405 },
+    { "label": "Tollygunge", "x": 240, "y": 470 },
+    { "label": "Naktala", "x": 600, "y": 500 }
+  ]
+}

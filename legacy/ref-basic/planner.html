@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7a1024">
+  <meta name="description" content="Build a personalised Durga Pujo route: choose your start, vibe, time window and travel style.">
+  <title>Pujo Planner — PandalPass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="planner">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="index.html" aria-label="PandalPass home">
+        <span class="brand__mark" aria-hidden="true">✦</span>
+        <span class="brand__name">PandalPass</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="planner.html" aria-current="page">Planner</a>
+        <a href="explore.html">Explore</a>
+        <a href="food.html">Food</a>
+        <a href="route.html">Route</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="btn btn--gold btn--sm" href="planner.html">Plan my Pujo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <div class="shell">
+      <div class="page-head">
+        <p class="eyebrow">Route builder</p>
+        <h1>Design your night</h1>
+        <p>Four quick choices and PandalPass builds a timed route that fits how you actually want to spend the evening.</p>
+      </div>
+
+      <div class="planner-layout">
+        <section class="panel planner-panel" aria-label="Pujo planner">
+          <div class="progress" aria-hidden="true">
+            <span class="progress__bar"></span>
+            <span class="progress__bar"></span>
+            <span class="progress__bar"></span>
+            <span class="progress__bar"></span>
+          </div>
+          <p class="step-label" id="step-label">Step 1 of 4</p>
+
+          <div class="wizard">
+            <section data-step="1">
+              <h2 class="question">Where are you starting from?</h2>
+              <p class="question-hint">Pick your launch point for the night.</p>
+              <div class="options options--grid" id="opts-start"></div>
+            </section>
+
+            <section data-step="2" hidden>
+              <h2 class="question">What kind of Pujo night?</h2>
+              <p class="question-hint">Choose all that feel right.</p>
+              <div class="options" id="opts-vibe"></div>
+            </section>
+
+            <section data-step="3" hidden>
+              <h2 class="question">How much time do you have?</h2>
+              <p class="question-hint">We'll fit the route to your window.</p>
+              <div class="options" id="opts-time"></div>
+            </section>
+
+            <section data-step="4" hidden>
+              <h2 class="question">How do you want to travel?</h2>
+              <p class="question-hint">Shapes your travel legs and timing.</p>
+              <div class="options" id="opts-mode"></div>
+              <div class="options">
+                <button type="button" class="toggle-row" id="food-toggle" role="switch" aria-checked="true">
+                  <span class="option__main"><span aria-hidden="true">🍴</span><span>Add a food stop</span></span>
+                  <span class="toggle" aria-hidden="true"></span>
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <div class="wizard__footer">
+            <button class="btn btn--ghost" id="back-btn" type="button">Back</button>
+            <button class="btn btn--dark" id="next-btn" type="button">Next</button>
+          </div>
+        </section>
+
+        <aside class="panel plan-summary" aria-label="Your plan so far">
+          <p class="eyebrow">Your plan so far</p>
+          <dl class="plan-summary__list">
+            <div><dt>Start</dt><dd id="sum-start">—</dd></div>
+            <div><dt>Vibes</dt><dd id="sum-vibes">—</dd></div>
+            <div><dt>Time</dt><dd id="sum-time">—</dd></div>
+            <div><dt>Travel</dt><dd id="sum-mode">—</dd></div>
+            <div><dt>Food stop</dt><dd id="sum-food">—</dd></div>
+          </dl>
+          <p class="plan-summary__note">Everything here is a planning estimate. Tap Generate when you're happy with the shape of the night.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div>
+        <a class="brand brand--light" href="index.html" aria-label="PandalPass home">
+          <span class="brand__mark" aria-hidden="true">✦</span>
+          <span class="brand__name">PandalPass</span>
+        </a>
+        <p>A planning companion for Kolkata's Durga Pujo. Crowd, time and cost are estimates, not live data.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="explore.html">Explore pandals</a>
+        <a href="food.html">Food stops</a>
+        <a href="route.html">Route map</a>
+        <a href="pass.html">My Pass</a>
+      </nav>
+    </div>
+    <div class="shell site-footer__bottom">
+      <span>PandalPass · a Pujo planning project</span>
+      <span>Built for the city that never sleeps during Pujo.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
